@@ -113,8 +113,3 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 - [ ] Export for Android/iOS
 - [ ] Upload to GitHub Pages / Itch.io for web play
 
----
-
-✅ Following this roadmap will ensure you get a **working prototype early**
-and only polish with final assets once mechanics are complete.
-
