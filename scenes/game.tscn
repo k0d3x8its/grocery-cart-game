@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://oyrtm40voe3u"]
+[gd_scene load_steps=2 format=3 uid="uid://oyrtm40voe3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,6 +11,9 @@
 [node name="Killline" type="Area2D" parent="Playfield"]
 
 [node name="Cart" type="CharacterBody2D" parent="Playfield"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Cart"]
+shape = SubResource("RectangleShape2D_8cj0n")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
