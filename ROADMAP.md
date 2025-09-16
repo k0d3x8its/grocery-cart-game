@@ -6,6 +6,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 ## **Phase 1: Foundation**
 
+> Focus: Intial setup of environment
 
 ### **Epoch 1.1: Project Setup**
 
