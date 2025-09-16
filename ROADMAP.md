@@ -13,7 +13,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 **Goal:** Prepare a clean environment for development
 - [x] Create GitHub repository (`main` for releases, `dev` for building)
 - [x] Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
-- [ ] Configure viewport for mobile-friendly dimensions (e.g., 1080x1920)
+- [x] Configure viewport for mobile-friendly dimensions (e.g., 720X1280)
 
 ### **Epoch 1.2: Player Control**
 
@@ -62,7 +62,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Make gameplay feel smoother
 - [ ] Add placeholder sound effects (catch, miss, mascot)
-- [ ] Add particle effect when catching items
+- [ ] Add particle effect when catching items (optional)
 - [ ] Add background color or gradient
 
 ---
@@ -83,8 +83,8 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Add juice & clarity
 - [ ] Style score UI with proper font & visuals
-- [ ] Animate score pop-ups when items caught
-- [ ] Add transition animations between scenes
+- [ ] Animate score pop-ups when items caught (optional)
+- [ ] Add transition animations between scenes (optional)
 
 ### **Epoch 3.3: Audio**
 
@@ -110,6 +110,5 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Get the game out
 - [ ] Export for Web (HTML5 build)
-- [ ] Export for Android/iOS
-- [ ] Upload to GitHub Pages / Itch.io for web play
+- [ ] Export for Android/iOS (optional)
 
