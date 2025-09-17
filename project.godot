@@ -15,11 +15,16 @@ run/main_scene="uid://oyrtm40voe3u"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://autoload/Global.gd"
+
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [input]
 
