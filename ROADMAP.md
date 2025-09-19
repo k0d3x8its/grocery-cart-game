@@ -19,7 +19,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Implement grocery cart movement
 - [x] Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
-- [ ] Add left-right input controls (touch + keyboard fallback)
+- [x] Add left-right input controls (touch + keyboard fallback)
 - [ ] Constrain cart within screen bounds
 
 ### **Epoch 1.3: Falling Objects**
