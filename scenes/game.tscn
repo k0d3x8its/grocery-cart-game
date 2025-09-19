@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://oyrtm40voe3u"]
+[gd_scene load_steps=3 format=3 uid="uid://oyrtm40voe3u"]
+
+[ext_resource type="Script" uid="uid://b50rabgcaky11" path="res://scenes/cart.gd" id="1_uwrxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+size = Vector2(200, 60)
 
 [node name="Main" type="Node2D"]
 
@@ -13,19 +18,27 @@ modulate = Color(0.372549, 1, 0, 1)
 position = Vector2(373, 1142)
 disable_mode = 1
 input_pickable = true
+script = ExtResource("1_uwrxv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Playfield/Cart"]
 modulate = Color(0, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
 z_index = 1
-position = Vector2(-4, -72)
-scale = Vector2(0.785235, 0.221046)
+position = Vector2(-2.99999, -74.9265)
+scale = Vector2(1, 0.266773)
 polygon = PackedVector2Array(-80, -40, 80, -40, 80, 40, -80, 40)
 
 [node name="Polygon2D" type="Polygon2D" parent="Playfield/Cart"]
 position = Vector2(-3, -46)
 color = Color(0, 1, 0, 1)
-polygon = PackedVector2Array(-80, -40, 80, -40, 80, 40, -80, 40)
+polygon = PackedVector2Array(-80, -40, -1, -40, 80, -40, 80, 40, -80, 40)
+
+[node name="CatchZone" type="Area2D" parent="Playfield/Cart"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Cart/CatchZone"]
+position = Vector2(-2, -65)
+shape = SubResource("RectangleShape2D_yqjtg")
+debug_color = Color(0.982324, 0, 0.363206, 0.42)
 
 [node name="ColorRect" type="ColorRect" parent="Playfield"]
 offset_right = 40.0
@@ -56,3 +69,5 @@ offset_bottom = -9.0
 scale = Vector2(1.04688, 0.605852)
 
 [node name="Game" type="Node" parent="."]
+
+[connection signal="area_entered" from="Playfield/Cart/CatchZone" to="Playfield/Cart" method="_on_catch_zone_area_entered"]
