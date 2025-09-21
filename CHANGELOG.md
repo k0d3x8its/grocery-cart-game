@@ -1,12 +1,14 @@
 # Changelog
 
+## v0.4.0a (2025-09-20)
+
+- **➕:** gd script for scoreboard
+- **🚀:** the size of the scoreboard so it is easier to read
+
 ## v0.3.0a (2025-09-20)
 
 - **➕:** item scene for falling items
 - **➕:** gd script for falling items
-- **➕:** gd script for scoreboard
-- **🚀:** increase score size so it is easier to read
-- **➕:** gd script to control scoreboard
 
 ## v0.2.0a (2025-09-19)
 
