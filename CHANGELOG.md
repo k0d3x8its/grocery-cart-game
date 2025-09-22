@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.0a (2025-09-21)
+
+- **➕:** a script that will randomly spawn items
+- **🐞:** that causes items to fall only on the right side of the screen
+- **🚀:** randomness of falling items
+
 ## v0.4.0a (2025-09-20)
 
 - **➕:** gd script for scoreboard
