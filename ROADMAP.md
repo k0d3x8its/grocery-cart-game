@@ -56,7 +56,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 **Goal:** Keep the game engaging
 - [ ] Increase spawn rate over time
 - [ ] Increase fall speed over time
-- [ ] Add score multiplier bonuses
+- [ ] Add score multiplier bonuses (optional)
 
 ### **Epoch 2.3: Basic Polish**
 
