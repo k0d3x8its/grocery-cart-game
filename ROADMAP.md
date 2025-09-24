@@ -20,23 +20,23 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 **Goal:** Implement grocery cart movement
 - [x] Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
 - [x] Add left-right input controls (touch + keyboard fallback)
-- [ ] Constrain cart within screen bounds
+- [x] Constrain cart within screen bounds
 
 ### **Epoch 1.3: Falling Objects**
 
 **Goal:** Build item spawn & fall mechanic
-- [ ] Create placeholder `Item` scene (Sprite + CollisionShape2D)
-- [ ] Add random spawn logic (bread, apple, fish as test)
-- [ ] Apply gravity/falling motion
-- [ ] Despawn items when off-screen
+- [x] Create placeholder `Item` scene (Sprite + CollisionShape2D)
+- [x] Add random spawn logic (bread, apple, fish as test)
+- [x] Apply gravity/falling motion
+- [x] Despawn items when off-screen
 
 ### **Epoch 1.4: Collision & Scoring**
 
 **Goal:** Detect catches and update score
-- [ ] Add collision detection between cart & items
-- [ ] Increase score when valid item caught
+- [x] Add collision detection between cart & items
+- [x] Increase score when valid item caught
 - [ ] Trigger **game over** when mascot caught
-- [ ] Display temporary score UI (basic Label)
+- [x] Display temporary score UI (basic Label)
 
 ---
 
