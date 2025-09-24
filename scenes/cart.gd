@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 900.0
+@export var speed := 1200.0
 var drag_active := false
 var drag_offset := Vector2.ZERO
 
