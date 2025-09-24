@@ -13,11 +13,11 @@ extends Node2D
 
 # --- Spawn timing & speed ---
 @export var spawn_interval_seconds := 0.5		# seconds between spawns
-@export var item_fall_speed := 700.0			# base fall speed passed to items
+@export var item_fall_speed := 500.0			# base fall speed passed to items
 @export var difficulty_tick_seconds := 10.0		# every N seconds, makes it harder
 
 # --- Horizontal placement and spacing ---
-@export var x_edge_margin := 40.0				# keep items inside screen edges
+@export var x_edge_margin := 20.0				# keep items inside screen edges
 @export var x_min_gap_between_spawns := 140.0	# minimum distance between consecutive spawns 
 
 # --- Per-istance variations ---
@@ -99,16 +99,15 @@ func _spawn_one() -> void:
 	var parent := get_parent()
 	parent.add_child(node)
 	
-	# Visible rect in GLOBAL space
-	var vr := get_viewport().get_visible_rect()
+	# Visible rect in global space
+	var vr: Rect2i = get_viewport().get_visible_rect()
 	
 	# Screen viewport edges
-	var left_local:  float = parent.to_local(vr.position).x
-	var right_local: float = parent.to_local(vr.position + Vector2(vr.size.x, 0)).x
-	var top_local:   float = parent.to_local(vr.position).y
-
-	# Pick an x across the visible width (using width in pixels), then shift into local
-	var spawn_x_local : float = left_local + _pick_spawn_x(vr.size.x)
+	var viewport_left:  float = vr.position.x
+	var viewport_right: float = vr.position.x + vr.size.x
+	var viewport_top:   float = vr.position.y
+	
+	var spawn_x_rel : float = _pick_spawn_x(vr.size.x)
 
 	# Derive half-width from CollisionPolygon2D (fallback 24 for 48px square)
 	var approx_half_width: float = 24.0 * node.scale.x
@@ -124,8 +123,12 @@ func _spawn_one() -> void:
 	# Safe margin: keep away from edges 
 	var safe_margin: float = max(x_edge_margin, approx_half_width + 4.0)
 
-	# Clamp the inside local left/right bounds
-	spawn_x_local = clampf(spawn_x_local, left_local + safe_margin, right_local - safe_margin)
+	# Clamp the global left/right bounds
+	var spawn_x_global: float = clampf(
+		viewport_left + spawn_x_rel,
+		viewport_left + safe_margin,
+		viewport_right - safe_margin
+	)
 
-	# position just above the top of the visible screen
-	node.global_position = Vector2(spawn_x_local, top_local - 50.0)
+	# position just above the visble top (global)
+	node.global_position = Vector2(spawn_x_global, viewport_top - 50.0)
