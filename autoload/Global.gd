@@ -16,7 +16,7 @@ func add_score(n:int):
 	score += n
 	emit_signal("score_changed", score)
 
-func game_over():
+func game_over() -> void:
 	if not playing: return
 	playing = false
 	emit_signal("game_ended")
