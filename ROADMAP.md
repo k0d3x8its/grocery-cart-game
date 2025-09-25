@@ -11,31 +11,31 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 ### **Epoch 1.1: Project Setup**
 
 **Goal:** Prepare a clean environment for development
-- [x] Create GitHub repository (`main` for releases, `dev` for building)
-- [x] Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
-- [x] Configure viewport for mobile-friendly dimensions (e.g., 1280X720)
+- ✅ Create GitHub repository (`main` for releases, `dev` for building)
+- ✅ Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
+- ✅ Configure viewport for mobile-friendly dimensions (e.g., 1280X720)
 ### **Epoch 1.2: Player Control**
 
 **Goal:** Implement grocery cart movement
-- [x] Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
-- [x] Add left-right input controls (touch + keyboard fallback)
-- [x] Constrain cart within screen bounds
+- ✅ Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
+- ✅ Add left-right input controls (touch + keyboard fallback)
+- ✅ Constrain cart within screen bounds
 
 ### **Epoch 1.3: Falling Objects**
 
 **Goal:** Build item spawn & fall mechanic
-- [x] Create placeholder `Item` scene (Sprite + CollisionShape2D)
-- [x] Add random spawn logic (bread, apple, fish as test)
-- [x] Apply gravity/falling motion
-- [x] Despawn items when off-screen
+- ✅ Create placeholder `Item` scene (Sprite + CollisionShape2D)
+- ✅ Add random spawn logic (bread, apple, fish as test)
+- ✅ Apply gravity/falling motion
+- ✅ Despawn items when off-screen
 
 ### **Epoch 1.4: Collision & Scoring**
 
 **Goal:** Detect catches and update score
-- [x] Add collision detection between cart & items
-- [x] Increase score when valid item caught
-- [ ] Trigger **game over** when mascot caught
-- [x] Display temporary score UI (basic Label)
+- ✅ Add collision detection between cart & items
+- ✅ Increase score when valid item caught
+- ✅ Trigger **game over** when mascot caught
+- ✅ Display temporary score UI (basic Label)
 
 ---
 
