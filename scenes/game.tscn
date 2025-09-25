@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://oyrtm40voe3u"]
+[gd_scene load_steps=8 format=3 uid="uid://oyrtm40voe3u"]
 
 [ext_resource type="Script" uid="uid://bxvm8dkqmhu32" path="res://scenes/spawner.gd" id="1_lbhrr"]
 [ext_resource type="Script" uid="uid://b50rabgcaky11" path="res://scenes/cart.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://clqueyont6ane" path="res://scenes/items.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://lofcr5xepuge" path="res://scenes/mascot.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dyc4wuyfux16d" path="res://scenes/ui.gd" id="3_lnu2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
@@ -262,6 +263,7 @@ cache/0/50/0/scale = 1.0
 [node name="Spawner" type="Node2D" parent="Playfield"]
 script = ExtResource("1_lbhrr")
 item_scene = ExtResource("2_yqjtg")
+mascot_scene = ExtResource("3_iywne")
 
 [node name="Killline" type="Area2D" parent="Playfield"]
 
