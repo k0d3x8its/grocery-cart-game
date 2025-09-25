@@ -12,7 +12,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Prepare a clean environment for development
 - [x] Create GitHub repository (`main` for releases, `dev` for building)
-- [x] Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/)
+- [x] Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
 - [x] Configure viewport for mobile-friendly dimensions (e.g., 1280X720)
 ### **Epoch 1.2: Player Control**
 
