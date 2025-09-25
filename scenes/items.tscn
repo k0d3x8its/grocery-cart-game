@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clqueyont6ane"]
 
-[ext_resource type="Script" uid="uid://cddmlcwpronb3" path="res://scenes/items.gd" id="1_cdcin"]
+[ext_resource type="Script" uid="uid://cddmlcwpronb3" path="res://scripts/items.gd" id="1_cdcin"]
 
 [node name="Item" type="Area2D" groups=["item"]]
 script = ExtResource("1_cdcin")
