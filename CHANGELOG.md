@@ -1,12 +1,12 @@
 # Changelog
 
-## v0.6.0a
+## v0.6.0a (2025-09-25)
 
 - **➕:** mascot gd script
 - **🚀:** spawner.gd to produce a mascot randomly
 - **♻️:** game over logic to freeze when mascot is caught
 
-## v0.5.1a
+## v0.5.1a (2025-09-24)
 
 - **🛠️:** bug that caused items to only fall to the right side of the screen
 
