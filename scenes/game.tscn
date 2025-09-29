@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://oyrtm40voe3u"]
+[gd_scene load_steps=9 format=3 uid="uid://oyrtm40voe3u"]
 
 [ext_resource type="Script" uid="uid://bxvm8dkqmhu32" path="res://scripts/spawner.gd" id="1_iywne"]
 [ext_resource type="Script" uid="uid://b50rabgcaky11" path="res://scripts/cart.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://clqueyont6ane" path="res://scenes/items.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://lofcr5xepuge" path="res://scenes/mascot.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dyc4wuyfux16d" path="res://scripts/ui.gd" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://e3fuxq0cj3jk" path="res://assets/sprites/cart_item_assets.png" id="5_p57ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(176, 60)
+size = Vector2(112, 19.5)
 
 [sub_resource type="FontFile" id="FontFile_lnu2h"]
 cache/0/16/0/ascent = 0.0
@@ -268,8 +269,9 @@ mascot_scene = ExtResource("3_iywne")
 [node name="Killline" type="Area2D" parent="Playfield"]
 
 [node name="Cart" type="CharacterBody2D" parent="Playfield"]
-modulate = Color(0.372549, 1, 0, 1)
-position = Vector2(373, 1142)
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(356, 1142)
 disable_mode = 1
 input_pickable = true
 script = ExtResource("1_uwrxv")
@@ -278,19 +280,22 @@ script = ExtResource("1_uwrxv")
 modulate = Color(0, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
 z_index = 2
-position = Vector2(-4.99999, -67)
-scale = Vector2(1, 0.266773)
+position = Vector2(1.00001, -67.9224)
+scale = Vector2(0.835938, 0.211315)
 polygon = PackedVector2Array(-80, -40, 80, -40, 80, 48.7305, -80, 48.7305)
 
-[node name="Polygon2D" type="Polygon2D" parent="Playfield/Cart"]
-position = Vector2(-5, -37)
-color = Color(0, 1, 0, 1)
-polygon = PackedVector2Array(-80, -40, 80, -40, 80, 40, -80, 40)
+[node name="Sprite2D" type="Sprite2D" parent="Playfield/Cart"]
+texture_filter = 1
+position = Vector2(-12, -47.25)
+scale = Vector2(1.18797, 1.23034)
+texture = ExtResource("5_p57ef")
+region_enabled = true
+region_rect = Rect2(12.6805, 36.3233, 133.873, 89.1296)
 
 [node name="CatchZone" type="Area2D" parent="Playfield/Cart"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Cart/CatchZone"]
-position = Vector2(-3, -56)
+position = Vector2(-6, -67.75)
 shape = SubResource("RectangleShape2D_yqjtg")
 debug_color = Color(0.982324, 0, 0.363206, 0.42)
 
@@ -300,9 +305,6 @@ offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.306923, 0.306923, 0.306923, 1)
-
-[node name="Item" type="Area2D" parent="Playfield" groups=["item"] instance=ExtResource("2_yqjtg")]
-position = Vector2(360, 40)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_lnu2h")
