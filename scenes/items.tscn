@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://clqueyont6ane"]
+[gd_scene load_steps=3 format=3 uid="uid://clqueyont6ane"]
 
 [ext_resource type="Script" uid="uid://cddmlcwpronb3" path="res://scripts/items.gd" id="1_cdcin"]
+[ext_resource type="Texture2D" uid="uid://e3fuxq0cj3jk" path="res://assets/sprites/cart_item_assets.png" id="2_sj0ge"]
 
 [node name="Item" type="Area2D" groups=["item"]]
 script = ExtResource("1_cdcin")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_sj0ge")
+region_enabled = true
+region_rect = Rect2(42, 5, 28, 26)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(1.14006, -1.18019)
+position = Vector2(-0.500006, 0.590966)
+scale = Vector2(1.46466, -1.39477)
 polygon = PackedVector2Array(-23.683, -22.8777, 23.683, -22.8777, 23.683, 23.7251, -23.683, 23.7251)
