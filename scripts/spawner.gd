@@ -7,24 +7,25 @@ extends Node2D
 # EXPORTED SETTINGS (tweakable in Inspector)
 # ─────────────────────────────────────────────────────────────────────────────
 # --- What to spawn ---
-@export var item_scene: PackedScene				# assign items.tscn in the Inspector
-@export var mascot_scene: PackedScene			# assign later, when mascot is created
-@export var mascot_chance := 0.50				# 0.15 standard - increase for difficulty
+@export var item_scenes: Array[PackedScene] = []				# assign items.tscn in the Inspector
+@export var item_weights: Array[float] = [1.25, 1.25, 1]		# makes items fall at unqiue chances
+@export var mascot_scene: PackedScene							# assign later, when mascot is created
+@export var mascot_chance := 0.50								# 0.15 standard - increase for difficulty
 
 # --- Spawn timing & speed ---
-@export var spawn_interval_seconds := 0.5		# seconds between spawns
-@export var item_fall_speed := 500.0			# base fall speed passed to items
-@export var difficulty_tick_seconds := 10.0		# every N seconds, makes it harder
+@export var spawn_interval_seconds := 0.5				# seconds between spawns
+@export var item_fall_speed := 500.0					# base fall speed passed to items
+@export var difficulty_tick_seconds := 10.0				# every N seconds, makes it harder
 
 # --- Horizontal placement and spacing ---
-@export var x_edge_margin := 20.0				# keep items inside screen edges
-@export var x_min_gap_between_spawns := 150.0	# minimum distance between consecutive spawns 
+@export var x_edge_margin := 20.0						# keep items inside screen edges
+@export var x_min_gap_between_spawns := 150.0			# minimum distance between consecutive spawns 
 
 # --- Per-istance variations ---
-@export var random_rot_min_deg := -10.0			# per-item minimum rotation variance
-@export var random_rot_max_deg := 10.0			# per-item maximum rotation variance
-@export var random_scale_min := 0.9				# per-item minumum size variance
-@export var random_scale_max := 1.1				# per-item maximum size variance 
+@export var random_rot_min_deg := -10.0					# per-item minimum rotation variance
+@export var random_rot_max_deg := 10.0					# per-item maximum rotation variance
+@export var random_scale_min := 0.9						# per-item minumum size variance
+@export var random_scale_max := 1.1						# per-item maximum size variance 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # RUNTIME STATE (private)
@@ -70,13 +71,44 @@ func _pick_spawn_x(viewport_width: float) -> float:
 	_last_x_pos = fallback_x
 	return fallback_x
 
+func _weighted_pick(candidates: Array[PackedScene], spawn_weights: Array[float]) -> PackedScene:
+	var total_weight: float = 0.0
+	for weight_value: float in spawn_weights:
+		total_weight += max(0.0, weight_value)
+	
+	# fallback to uniform if all weights are zero/negative
+	if total_weight <= 0.0:
+		return candidates[randi() % candidates.size()]
+	
+	var pick: float = randf() * total_weight
+	var cumulative_weight: float = 0.0
+	
+	for i: int in candidates.size():
+		var item_weight: float = max(0.0, float(spawn_weights[i]))
+		cumulative_weight += item_weight
+		if pick <= cumulative_weight:
+			return candidates[i]
+	
+	return candidates.back()
+
 func _choose_spawn_scene() -> PackedScene:
 	# Prefer mascot sometimes if assigned and the random roll says so; otherwise item.
-	if item_scene == null and mascot_scene == null:
+	if item_scenes.is_empty() and mascot_scene == null:
 		push_warning("Spawner: assign item_scene (and mascot_scene if used).")
 		return null
-	var use_mascot := mascot_scene != null and randf() < mascot_chance
-	return mascot_scene if use_mascot else item_scene
+	
+	# Mascot roll first
+	if mascot_scene != null and randf() < mascot_chance:
+		return mascot_scene
+
+	# Otherwise, pick an item
+	if item_scenes.is_empty():
+		return null
+	
+	if item_weights.size() == item_scenes.size() and item_weights.size() > 0:
+		return _weighted_pick(item_scenes, item_weights)
+	else:
+		return item_scenes[randi() % item_scenes.size()]
 
 # ─────────────────────────────────────────────────────────────────────────────
 # ░ MAIN SPAWN
