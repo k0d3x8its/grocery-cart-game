@@ -271,8 +271,6 @@ item_weights = Array[float]([0.0, 0.0, 0.0])
 mascot_scene = ExtResource("3_iywne")
 mascot_chance = 0.25
 
-[node name="Killline" type="Area2D" parent="Playfield"]
-
 [node name="Cart" type="CharacterBody2D" parent="Playfield"]
 texture_filter = 1
 texture_repeat = 1
