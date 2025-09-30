@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.0a (2025-09-29)
+
+- **⬆️:** project.godot
+- **❌:** shaped placeholder
+- **➕:** apple sprite
+- **➕:** mascot sprite
+- **➕:** cart sprite
+- **➕:** cart asset import
+- **➕:** mascot asset import
+
 ## v0.6.0a (2025-09-25)
 
 - **➕:** mascot gd script
