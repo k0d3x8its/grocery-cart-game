@@ -1,7 +1,9 @@
+# Shared by all items
+
 extends Area2D
 @export var fall_speed := 500.0
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not Global.playing:
 		return
 	position.y += fall_speed * delta
