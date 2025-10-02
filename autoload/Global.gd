@@ -1,21 +1,28 @@
 extends Node
 
-signal score_changed(new_score)
+# Emitted whenever score changes
+signal score_changed(new_score: int)
+# Emitted once when the round ends (mascot caught)
 signal game_ended
 
+# Current round score
 var score := 0
-var playing := true
+# Whether gameplay is active
+var playing: bool = true
 
+# Reset round state and broacast the fresh score (0)
 func reset():
 	score = 0
 	playing = true
 	emit_signal("score_changed", score)
 
-func add_score(n:int):
+# Add to the score only if the round is active
+func add_score(delta_points: int) -> void:
 	if not playing: return
-	score += n
+	score += delta_points
 	emit_signal("score_changed", score)
 
+# End the round exactly once; does nothing if already ended
 func game_over() -> void:
 	if not playing: return
 	playing = false
