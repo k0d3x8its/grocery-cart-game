@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.0.0b (2025-10-02)
+
+- **🚀:** Global.gd to be more legible
+- **⬆️:** project.godot
+- **⬆️:** game.tscn
+- **🚀:** UI logic to include main menu
+- **🚀:** UI logic to include start option
+- **🚀:** UI logic for quit option
+- **➕:** Game over menu
+- **➕:** UI logic for restart option
+
+## v0.9.0a (2025-10-01)
+
+- **➕:** background pattern
+- **➕:** Grape Soda font
+- **➕:** mainMenu.tscn
+- **➕:** start button logic
+- **➕:** quit button logic
+- **➕:** main menu logic
+- **➕:** screenshot of main menu for README.md
+
+## v0.8.0a (2025-09-30)
+
+- **➕:** background tiles
+- **➕:** tileset
+- **➕:** new scene for apples
+- **➕:** new scene for fish
+- **➕:** new scene for pretzel
+- **➕:** tilemap
+- **❌:** background color
+- **❌:** apple sprite from items.tscn
+- **♻️:** changed function from ```_process``` to ```_physics_process``` for falling items
+- **🚀:** item-spawner to produce an array of items
+- **🚀:** pixel image recognition for apples
+
 ## v0.7.0a (2025-09-29)
 
 - **⬆️:** project.godot
