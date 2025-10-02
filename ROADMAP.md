@@ -62,7 +62,6 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 **Goal:** Make gameplay feel smoother
 - [ ] Add placeholder sound effects (catch, miss, mascot)
 - [ ] Add particle effect when catching items (optional)
-- ✅ Add background color or gradient
 
 ---
 
