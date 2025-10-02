@@ -8,3 +8,7 @@
 </div>
 </br>
 Arcade-style game where you slide a grocery cart left/right to catch falling groceries and avoid the mascot
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/k0d3x8its/grocery-cart-game/dev/assets/sprites/images/game-main-menu.png" alt="Main Menu" width="480">
+</p>
