@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="grocery-cart-game"
-run/main_scene="uid://oyrtm40voe3u"
+run/main_scene="uid://rwuty5rv6fgh"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
