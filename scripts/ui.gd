@@ -1,11 +1,65 @@
 extends CanvasLayer
-@onready var score_label := $ScoreLabel
 
-func _ready():
-	# Listen for score changes
-	Global.connect("score_changed", _on_score_changed)
-	# Initialize label with current score
-	_on_score_changed(Global.score)
+# ─────────────────────────────────────────────────────────────────────────────
+# NODE REFERENCES
+# ─────────────────────────────────────────────────────────────────────────────
+@onready var score_label: Label = $ScoreLabel
+@onready var panel: PanelContainer = $GameOverPanel
+@onready var final_score: Label = $GameOverPanel/VBox/FinalScore
+@onready var restart_btn: Button = $GameOverPanel/VBox/Restart
+@onready var quit_btn: Button = $GameOverPanel/VBox/Quit
 
-func _on_score_changed(s):
-	score_label.text = "Score: %s" % s
+func _ready() -> void:
+	# UI should still work while the game is paused
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Start state
+	_update_hud_score(Global.score)
+	# Panel hidden until mascot is caught
+	panel.visible = false
+	
+	# Listen for score updates and game over
+	Global.score_changed.connect(_on_score_changed)
+	Global.game_ended.connect(_on_game_over)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SCORE UPDATES (HUD during gameplay)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Called when Global emits "score_changed(new_score)"
+func _on_score_changed(new_score: int) -> void:
+	_update_hud_score(new_score)
+
+# Update only the HUD label (top-left) during gameplay
+func _update_hud_score(new_score: int) -> void:
+	score_label.text = "Score: %d" % new_score
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GAME OVER FLOW
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Called when Global emits "game_ended"
+func _on_game_over() -> void:
+	# Freeze gameplay
+	get_tree().paused = true
+	
+	# Hide the HUD score so it does not show in top-left corner
+	score_label.visible = false
+	
+	# Show the final score inside the panel and reveal the panel
+	final_score.text = "Score: %d" % Global.score
+	panel.visible = true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BUTTON HANDLERS
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Restart: unpause, reset global state, and reload the current scene (game.tscn)
+func _on_restart_pressed() -> void:
+	get_tree().paused = false
+	Global.reset()
+	get_tree().reload_current_scene()
+
+# Quit the application immediately
+func _on_quit_pressed() -> void:
+	get_tree().quit()
