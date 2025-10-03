@@ -107,21 +107,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -124.0
-offset_right = 59.0
-offset_bottom = 36.0
+offset_left = -222.5
+offset_top = -128.0
+offset_right = 222.5
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.64439, 2.75373)
 theme_override_constants/separation = 20
 
 [node name="Start Game" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_qkhwq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l7wge")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3d1i7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7nrmo")
@@ -130,12 +132,14 @@ text = "Start Game"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_qkhwq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l7wge")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3d1i7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7nrmo")
@@ -143,12 +147,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qkhwq")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_qkhwq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 45
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l7wge")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3d1i7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7nrmo")
