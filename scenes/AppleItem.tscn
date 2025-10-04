@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://e3fuxq0cj3jk" path="res://assets/sprites/cart_item_assets.png" id="2_2leqs"]
 
 [node name="Item" instance=ExtResource("1_lpu3c")]
+is_multiplier_item = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture_filter = 1
 texture = ExtResource("2_2leqs")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-visible = false
 position = Vector2(-3.79086e-05, 0.590966)
 scale = Vector2(1.47785, -1.39477)
