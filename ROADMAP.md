@@ -53,9 +53,9 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 ### **Epoch 2.2: Difficulty Scaling**
 
 **Goal:** Keep the game engaging
-- [ ] Increase spawn rate over time
-- [ ] Increase fall speed over time
-- [ ] Add score multiplier bonuses (optional)
+- ✅ Increase spawn rate over time
+- ✅ Increase fall speed over time
+- ✅ Add score multiplier bonus option
 
 ### **Epoch 2.3: Basic Polish**
 
@@ -75,12 +75,12 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 - ✅ Import mascot sprite
 - ✅ Import food item sprites
 - ✅ Import cart sprite
-- ✅ Add background art
+- [ ] Add background art
 
 ### **Epoch 3.2: UI & Feedback**
 
 **Goal:** Add juice & clarity
-- [ ] Style score UI with proper font & visuals
+- ✅ Style score UI with proper font & visuals
 - [ ] Animate score pop-ups when items caught (optional)
 - [ ] Add transition animations between scenes (optional)
 
