@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://oyrtm40voe3u"]
+[gd_scene load_steps=24 format=4 uid="uid://oyrtm40voe3u"]
 
 [ext_resource type="Script" uid="uid://bxvm8dkqmhu32" path="res://scripts/spawner.gd" id="1_iywne"]
 [ext_resource type="Script" uid="uid://b50rabgcaky11" path="res://scripts/cart.gd" id="1_uwrxv"]
@@ -9,10 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://b6y5s8vparcxx" path="res://scenes/PretzelItem.tscn" id="4_vtaks"]
 [ext_resource type="Texture2D" uid="uid://e3fuxq0cj3jk" path="res://assets/sprites/cart_item_assets.png" id="5_p57ef"]
 [ext_resource type="TileSet" uid="uid://oqw1tj12bnwr" path="res://tiles/tileset.tres" id="9_0tnpc"]
+[ext_resource type="Script" uid="uid://dwnp4af320v1l" path="res://scripts/kill_line.gd" id="9_kvpfn"]
 [ext_resource type="FontFile" uid="uid://bo3g0ypet24lq" path="res://assets/fonts/GrapeSoda.ttf" id="10_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
 size = Vector2(112, 9.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(722, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(0.403922, 0.403922, 0.403922, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0.337255, 0.337255, 0.337255, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(4, 4)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
 bg_color = Color(0.404511, 0.404511, 0.404511, 1)
@@ -146,17 +168,29 @@ item_weights = Array[float]([0.0, 0.0, 0.0])
 mascot_scene = ExtResource("3_iywne")
 mascot_chance = 0.25
 
+[node name="KillLine" type="Area2D" parent="Playfield"]
+position = Vector2(357, 1165)
+script = ExtResource("9_kvpfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/KillLine"]
+position = Vector2(3, 105)
+shape = SubResource("RectangleShape2D_vtaks")
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_lnu2h")
 
 [node name="ScoreLabel" type="Label" parent="UI"]
-offset_left = 12.0
-offset_right = 318.0
-offset_bottom = 100.0
-theme_override_colors/font_color = Color(0.151276, 0.151276, 0.151276, 1)
-theme_override_colors/font_shadow_color = Color(0.517184, 0.517184, 0.517184, 1)
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 335.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("10_vtaks")
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
 text = "Score: 0"
 
 [node name="GameOverPanel" type="PanelContainer" parent="UI"]
@@ -232,5 +266,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rysoc")
 text = "Quit"
 
 [connection signal="area_entered" from="Playfield/Cart/CatchZone" to="Playfield/Cart" method="_on_catch_zone_area_entered"]
+[connection signal="area_entered" from="Playfield/KillLine" to="Playfield/KillLine" method="_on_killLine_area_entered"]
+[connection signal="body_entered" from="Playfield/KillLine" to="Playfield/KillLine" method="_on_killLine_body_entered"]
 [connection signal="pressed" from="UI/GameOverPanel/VBox/Restart" to="UI" method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/GameOverPanel/VBox/Quit" to="UI" method="_on_quit_pressed"]
