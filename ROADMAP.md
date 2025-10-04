@@ -11,32 +11,31 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 ### **Epoch 1.1: Project Setup**
 
 **Goal:** Prepare a clean environment for development
-- [x] Create GitHub repository (`main` for releases, `dev` for building)
-- [x] Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
-- [x] Configure viewport for mobile-friendly dimensions (e.g., 720X1280)
-
+- ✅ Create GitHub repository (`main` for releases, `dev` for building)
+- ✅ Setup project folder structure (`scenes/`, `scripts/`, `assets/`, `ui/`)
+- ✅ Configure viewport for mobile-friendly dimensions (e.g., 1280X720)
 ### **Epoch 1.2: Player Control**
 
 **Goal:** Implement grocery cart movement
-- [ ] Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
-- [ ] Add left-right input controls (touch + keyboard fallback)
-- [ ] Constrain cart within screen bounds
+- ✅ Create `Cart` scene (Node2D + Sprite + CollisionShape2D)
+- ✅ Add left-right input controls (touch + keyboard fallback)
+- ✅ Constrain cart within screen bounds
 
 ### **Epoch 1.3: Falling Objects**
 
 **Goal:** Build item spawn & fall mechanic
-- [ ] Create placeholder `Item` scene (Sprite + CollisionShape2D)
-- [ ] Add random spawn logic (bread, apple, fish as test)
-- [ ] Apply gravity/falling motion
-- [ ] Despawn items when off-screen
+- ✅ Create placeholder `Item` scene (Sprite + CollisionShape2D)
+- ✅ Add random spawn logic (bread, apple, fish as test)
+- ✅ Apply gravity/falling motion
+- ✅ Despawn items when off-screen
 
 ### **Epoch 1.4: Collision & Scoring**
 
 **Goal:** Detect catches and update score
-- [ ] Add collision detection between cart & items
-- [ ] Increase score when valid item caught
-- [ ] Trigger **game over** when mascot caught
-- [ ] Display temporary score UI (basic Label)
+- ✅ Add collision detection between cart & items
+- ✅ Increase score when valid item caught
+- ✅ Trigger **game over** when mascot caught
+- ✅ Display temporary score UI (basic Label)
 
 ---
 
@@ -47,23 +46,22 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 ### **Epoch 2.1: Core Loop**
 
 **Goal:** Implement main menu → gameplay → game over → restart
-- [ ] Add `MainMenu` scene with “Start Game” button
-- [ ] Connect button to load `Game` scene
-- [ ] Add `GameOver` screen with score & restart option
+- ✅ Add `MainMenu` scene with “Start Game” button
+- ✅ Connect button to load `Game` scene
+- ✅ Add `GameOver` screen with score & restart option
 
 ### **Epoch 2.2: Difficulty Scaling**
 
 **Goal:** Keep the game engaging
 - [ ] Increase spawn rate over time
 - [ ] Increase fall speed over time
-- [ ] Add score multiplier bonuses
+- [ ] Add score multiplier bonuses (optional)
 
 ### **Epoch 2.3: Basic Polish**
 
 **Goal:** Make gameplay feel smoother
 - [ ] Add placeholder sound effects (catch, miss, mascot)
 - [ ] Add particle effect when catching items (optional)
-- [ ] Add background color or gradient
 
 ---
 
@@ -74,10 +72,10 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 ### **Epoch 3.1: Final Assets**
 
 **Goal:** Swap in branded visuals
-- [ ] Import mascot sprite
-- [ ] Import food item sprites
-- [ ] Import cart sprite
-- [ ] Add background art
+- ✅ Import mascot sprite
+- ✅ Import food item sprites
+- ✅ Import cart sprite
+- ✅ Add background art
 
 ### **Epoch 3.2: UI & Feedback**
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://lofcr5xepuge"]
+
+[ext_resource type="Script" uid="uid://ces6ltpragbtx" path="res://scripts/mascot.gd" id="1_tvw7n"]
+[ext_resource type="Texture2D" uid="uid://cpb4i27uafxay" path="res://assets/sprites/mascot.png" id="2_12kyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvw7n"]
+size = Vector2(81, 80)
+
+[node name="Mascot" type="Area2D" groups=["mascot"]]
+script = ExtResource("1_tvw7n")
+
+[node name="Polygon2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_12kyv")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_tvw7n")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6y5s8vparcxx"]
+
+[ext_resource type="PackedScene" uid="uid://clqueyont6ane" path="res://scenes/items.tscn" id="1_ns4xp"]
+[ext_resource type="Texture2D" uid="uid://e3fuxq0cj3jk" path="res://assets/sprites/cart_item_assets.png" id="2_kv5uw"]
+
+[node name="Item" instance=ExtResource("1_ns4xp")]
+texture_filter = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
+texture = ExtResource("2_kv5uw")
+region_rect = Rect2(72, 4, 32, 28)
+
+[node name="CollisionPolygon2D" parent="." index="1" groups=["item"]]
+position = Vector2(0.999999, 1.13073)
+scale = Vector2(1.66258, -1.48864)
+polygon = PackedVector2Array(-16.8412, -15.3625, -9.62357, -21.4082, -1.20295, -23.4235, 9.0221, -21.4082, 16.2398, -14.6907, 20.4501, -9.98846, 23.4575, -1.92744, 23.4575, 8.8206, 22.2545, 14.1946, 19.2471, 19.5686, 13.2324, 24.2709, -0.747978, 24.2709, -13.8339, 24.2709, -19.8486, 20.2404, -22.856, 16.2099, -24.6604, 8.8206, -24.0589, -2.59919, -21.653, -9.31671)

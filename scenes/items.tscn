@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://clqueyont6ane"]
+
+[ext_resource type="Script" uid="uid://cddmlcwpronb3" path="res://scripts/items.gd" id="1_cdcin"]
+
+[node name="Item" type="Area2D" groups=["item"]]
+script = ExtResource("1_cdcin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+region_enabled = true
+region_rect = Rect2(42, 5, 28, 26)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.500006, 0.590966)
+scale = Vector2(1.46466, -1.39477)
+polygon = PackedVector2Array(-23.683, -22.8777, 23.683, -22.8777, 23.683, 23.7251, -23.683, 23.7251)
