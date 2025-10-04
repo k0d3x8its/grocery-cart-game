@@ -17,9 +17,9 @@ func reset():
 	emit_signal("score_changed", score)
 
 # Add to the score only if the round is active
-func add_score(delta_points: int) -> void:
+func add_score(points_to_add: int) -> void:
 	if not playing: return
-	score += delta_points
+	score += points_to_add
 	emit_signal("score_changed", score)
 
 # End the round exactly once; does nothing if already ended
