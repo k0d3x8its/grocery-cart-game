@@ -7,10 +7,10 @@ extends Node2D
 # EXPORTED SETTINGS (tweakable in Inspector)
 # ─────────────────────────────────────────────────────────────────────────────
 # --- What to spawn ---
-@export var item_scenes: Array[PackedScene] = []				# assign items.tscn in the Inspector
-@export var item_weights: Array[float] = [1.25, 1.25, 1]		# makes items fall at unqiue chances
-@export var mascot_scene: PackedScene							# assign later, when mascot is created
-@export var mascot_chance := 0.50								# 0.15 standard - increase for difficulty
+@export var item_scenes: Array[PackedScene] = []		# assign items.tscn in the Inspector
+@export var item_weights: Array[float] = []				# makes items fall at unqiue chances
+@export var mascot_scene: PackedScene					# assign later, when mascot is created
+@export var mascot_chance := 0.50						# 0.15 standard - increase for difficulty
 
 # --- Spawn timing & speed ---
 @export var spawn_interval_seconds := 0.5				# seconds between spawns
