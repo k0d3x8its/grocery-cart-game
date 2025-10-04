@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.0b (2025-10-02)
+## v0.10.0a (2025-10-02)
 
 - **🚀:** Global.gd to be more legible
 - **⬆️:** project.godot
