@@ -26,13 +26,35 @@ func _ready() -> void:
 # SCORE UPDATES (HUD during gameplay)
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Add commas to make numbers easier to read
+func format_with_commas(value: int) -> String:
+	# Preserve negative sign if needed
+	var sign_prefix := "-" if value < 0 else ""
+	# Convert absolute value to string
+	var digits := str(abs(value))
+	# Placement for final output
+	var result := ""
+	# Track how many digits are left to process
+	var remaining_length := digits.length()
+	
+	# Insert commas every 3 digits from the right
+	while remaining_length > 3:
+		result = "," + digits.substr(remaining_length - 3, 3) + result
+		remaining_length -= 3
+		
+	# Add whatever digits remain at the front (no comma)
+	result = digits.substr(0, remaining_length) + result
+	
+	return sign_prefix + result
+
 # Called when Global emits "score_changed(new_score)"
 func _on_score_changed(new_score: int) -> void:
 	_update_hud_score(new_score)
 
 # Update only the HUD label (top-left) during gameplay
 func _update_hud_score(new_score: int) -> void:
-	score_label.text = "Score: %d" % new_score
+	var formatted_score := format_with_commas(new_score)
+	score_label.text = "Score: " + formatted_score
 
 # ─────────────────────────────────────────────────────────────────────────────
 # GAME OVER FLOW
@@ -47,7 +69,7 @@ func _on_game_over() -> void:
 	score_label.visible = false
 	
 	# Show the final score inside the panel and reveal the panel
-	final_score.text = "Score: %d" % Global.score
+	final_score.text = "Final Score: " + format_with_commas(Global.score)
 	panel.visible = true
 
 # ─────────────────────────────────────────────────────────────────────────────
