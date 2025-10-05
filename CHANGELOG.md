@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.11.0a (2025-10-04)
+
+- **➕:** logic to recognize missed items and then apply that to the score
+- **➕:** added kill_line script to catch missed items
+- **♻️:** ```delta_points``` to ```points_to_add``` for clarity
+- **🛠️:** collision visibility when debugging/testing
+- **➕:** KillLine node and connections
+- **🚀:** code to be more legible
+- **➕:** Scoring API
+- **➕:** logic to catch and miss items so it reflects in the score
+- **🚀:** numbers in score to read with commas when count gets larger than three digits
+
 ## v0.10.0a (2025-10-02)
 
 - **🚀:** Global.gd to be more legible
