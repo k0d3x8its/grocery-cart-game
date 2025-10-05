@@ -69,7 +69,7 @@ func _on_game_over() -> void:
 	score_label.visible = false
 	
 	# Show the final score inside the panel and reveal the panel
-	final_score.text = "Final Score: " + format_with_commas(Global.score)
+	final_score.text = "Score: " + format_with_commas(Global.score)
 	panel.visible = true
 
 # ─────────────────────────────────────────────────────────────────────────────
