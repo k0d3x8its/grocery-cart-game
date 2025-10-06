@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.12.0a (2025-10-05)
+
+- **➕:** game background artwork
+- **➕:** game-background import file
+- **➕:** main menu background artwork
+- **➕:** main menu background import file
+- **⬆️:** README.md with new main menu artwork
+- **❌:** tiles as background
+- **➕:** background to main menu
+- **🛠️:** logical error that caused cart to slightly go off screen
+- **♻️:** Final Score to Score
+
 ## v0.11.0a (2025-10-04)
 
 - **➕:** logic to recognize missed items and then apply that to the score
@@ -11,6 +23,7 @@
 - **➕:** Scoring API
 - **➕:** logic to catch and miss items so it reflects in the score
 - **🚀:** numbers in score to read with commas when count gets larger than three digits
+- **🐞:** causing cart to slightly go off screen
 
 ## v0.10.0a (2025-10-02)
 
