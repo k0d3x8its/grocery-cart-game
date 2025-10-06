@@ -75,7 +75,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 - ✅ Import mascot sprite
 - ✅ Import food item sprites
 - ✅ Import cart sprite
-- [ ] Add background art
+- ✅ Add background art
 
 ### **Epoch 3.2: UI & Feedback**
 
