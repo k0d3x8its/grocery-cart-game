@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://bo3g0ypet24lq" path="res://assets/fonts/GrapeSoda.ttf" id="10_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
-size = Vector2(94.6008, 9.75)
+size = Vector2(94.6008, 2.57184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
 size = Vector2(722, 20)
@@ -164,8 +164,8 @@ script = ExtResource("1_uwrxv")
 modulate = Color(0, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
 z_index = 2
-position = Vector2(-1.02088, -62.6149)
-scale = Vector2(0.853386, 0.140877)
+position = Vector2(-0.34033, -60.1424)
+scale = Vector2(0.848069, 0.0575268)
 polygon = PackedVector2Array(-80, -40, 80, -40, 80, 48.7305, -80, 48.7305)
 
 [node name="Sprite2D" type="Sprite2D" parent="Playfield/Cart"]
@@ -179,7 +179,7 @@ region_rect = Rect2(12.6805, 36.3233, 133.873, 89.1296)
 [node name="CatchZone" type="Area2D" parent="Playfield/Cart"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/Cart/CatchZone"]
-position = Vector2(4.42378, -62.875)
+position = Vector2(4.42378, -59.2859)
 shape = SubResource("RectangleShape2D_yqjtg")
 debug_color = Color(0.982324, 0, 0.363206, 0.42)
 
