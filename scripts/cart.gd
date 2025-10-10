@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+# ─────────────────────────────────────────────────────────────────────────────
+# CART: movement + input + catch handling
+# ─────────────────────────────────────────────────────────────────────────────
+
 @export var speed := 1200.0
 @export var screen_padding_left := 0.0
 @export var screen_padding_right := 0.0
@@ -7,9 +11,15 @@ extends CharacterBody2D
 var drag_active: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
+# ─────────────────────────────────────────────────────────────────────────────
+# READY / SIGNALS
+# ─────────────────────────────────────────────────────────────────────────────
 func _ready() -> void:
 	Global.game_ended.connect(_on_game_ended)
 
+# ─────────────────────────────────────────────────────────────────────────────
+# INPUT (touch + mouse drag)
+# ─────────────────────────────────────────────────────────────────────────────
 func _unhandled_input(event) -> void:
 	if not Global.playing:
 		return
@@ -17,16 +27,22 @@ func _unhandled_input(event) -> void:
 	if event is InputEventScreenTouch:
 		drag_active = event.pressed
 		if event.pressed: drag_offset = global_position - event.position
+		
 	elif event is InputEventScreenDrag and drag_active:
 		global_position.x = (event.position + drag_offset).x
 		_keep_on_screen()
+		
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		drag_active = event.pressed
 		if event.pressed: drag_offset = global_position - event.position
+		
 	elif event is InputEventMouseMotion and drag_active:
 		global_position.x = (event.position + drag_offset).x
 		_keep_on_screen()
 
+# ─────────────────────────────────────────────────────────────────────────────
+# PHYSICS: keyboard movement
+# ─────────────────────────────────────────────────────────────────────────────
 func _physics_process(_delta_seconds: float) -> void:
 	if not Global.playing:
 		velocity.x = 0.0
@@ -42,6 +58,9 @@ func _physics_process(_delta_seconds: float) -> void:
 		move_and_slide()
 		_keep_on_screen()
 
+# ─────────────────────────────────────────────────────────────────────────────
+# SCREEN CLAMP
+# ─────────────────────────────────────────────────────────────────────────────
 func _keep_on_screen() -> void:
 	var viewport_width: float = get_viewport_rect().size.x
 	var extents: Vector2 = _cart_extents_global()
@@ -77,6 +96,13 @@ func _cart_extents_global() -> Vector2:
 		return Vector2(sprite_half_width, sprite_half_width)
 	return Vector2.ZERO
 
+# ─────────────────────────────────────────────────────────────────────────────
+# CATCH ZONE HANDLER
+# -----------------------------------------------------------------------------
+# - Uses item.get_score_on_catch() so per-item multipliers are respected
+# - Adds to Global score
+# - Spawns a green pop-up above the cart
+# ─────────────────────────────────────────────────────────────────────────────
 func _on_catch_zone_area_entered(entered_area: Area2D) -> void:
 	if not Global.playing:
 		return
@@ -85,11 +111,22 @@ func _on_catch_zone_area_entered(entered_area: Area2D) -> void:
 		var score_change_from_catch: int = 1
 		if entered_area.has_method("get_score_on_catch"):
 			score_change_from_catch = entered_area.get_score_on_catch()
+		
+		# Update score first (keeps HUD consistent)
 		Global.add_score(score_change_from_catch)
+		
+		# Score pops above cart
+		UIEffect.spawn_score_popup(global_position, score_change_from_catch, UIEffect.cart_world_offset)
+		
+		# Cleanup item
 		entered_area.queue_free()
+		
 	elif entered_area.is_in_group("mascot"):
 		Global.game_over()
-		
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GAME ENDED
+# ─────────────────────────────────────────────────────────────────────────────
 func _on_game_ended() -> void:
 	drag_active = false
 	velocity = Vector2.ZERO
