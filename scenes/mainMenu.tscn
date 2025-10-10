@@ -64,14 +64,17 @@ texture = ExtResource("3_7nrmo")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -313.0
-offset_top = 437.0
-offset_right = 302.0
-offset_bottom = 517.0
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -201.0
+offset_right = 215.0
+offset_bottom = -121.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -81,7 +84,7 @@ theme_override_constants/outline_size = 15
 theme_override_constants/shadow_outline_size = 15
 theme_override_fonts/font = ExtResource("1_qkhwq")
 theme_override_font_sizes/font_size = 80
-text = "Grocery Cart Game"
+text = "Grocer's Run"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
