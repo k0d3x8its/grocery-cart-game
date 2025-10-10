@@ -81,7 +81,7 @@ This roadmap is structured in **Phases → Epochs → Goals → Tasks**.
 
 **Goal:** Add juice & clarity
 - ✅ Style score UI with proper font & visuals
-- [ ] Animate score pop-ups when items caught (optional)
+- ✅ Animate score pop-ups when items caught and missed
 - [ ] Add transition animations between scenes (optional)
 
 ### **Epoch 3.3: Audio**
