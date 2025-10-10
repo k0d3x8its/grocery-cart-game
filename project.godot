@@ -10,14 +10,16 @@ config_version=5
 
 [application]
 
-config/name="grocery-cart-game"
+config/name="Grocer's Run"
+config/description="Arcade-style game where you slide a grocery cart left/right to catch falling groceries and avoid the mascot"
 run/main_scene="uid://rwuty5rv6fgh"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cpb4i27uafxay"
 
 [autoload]
 
 Global="*res://autoload/Global.gd"
+UIEffect="*res://autoload/UIEffect.gd"
 
 [display]
 
@@ -25,6 +27,10 @@ window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
+
+[global_group]
+
+player=""
 
 [input]
 
