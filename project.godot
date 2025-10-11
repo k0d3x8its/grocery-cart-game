@@ -14,6 +14,10 @@ config/name="Grocer's Run"
 config/description="Arcade-style game where you slide a grocery cart left/right to catch falling groceries and avoid the mascot"
 run/main_scene="uid://rwuty5rv6fgh"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://pecih6bn8hns"
 config/icon="uid://cpb4i27uafxay"
 
 [autoload]
