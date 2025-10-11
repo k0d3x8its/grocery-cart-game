@@ -216,6 +216,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
 text = "Score: 0"
 
 [node name="GameOverPanel" type="PanelContainer" parent="UI"]
+visible = false
 custom_minimum_size = Vector2(320, 220)
 anchors_preset = 7
 anchor_left = 0.5
