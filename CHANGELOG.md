@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.13.0a (2025-10-10)
+
+- **♻️:** name in main menu
+- **➕:** UIEffect.gd
+- **♻️:** gameplay background to something more contrasting to the items and mascot
+- **🚀:** configuration by changing name and adding description
+- **➕:** UIEffect script to autoload
+- **➕:** play and global group
+- **♻️:** cart size
+- **➕:** new scene for floating score
+- **♻️:** name of game and repositioned to center
+- **➕:** score pop-up logic to the kill_line.gd script
+- **🚀:** cart logic with score pop-ups
+- **➕:** icon.png for splace screen
+- **♻️:** configuration in relation to the splash screen
+- **🚀:** comments and restructured
+
 ## v0.12.0a (2025-10-05)
 
 - **➕:** game background artwork
